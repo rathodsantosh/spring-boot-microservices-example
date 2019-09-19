@@ -27,10 +27,6 @@ public class Item {
     @GeneratedValue
     private Long id;
     private String name;
-    
-    public Item() {
-		// TODO Auto-generated constructor stub
-	}
 	
     public Item(String name) {
         this.name = name;
