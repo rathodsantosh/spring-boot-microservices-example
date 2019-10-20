@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: zuul-service
+zuul:
+  routes:
+    item-catalog-service:
+        url: http://localhost:8088
+    edge-service:
+        url: http://localhost:8089

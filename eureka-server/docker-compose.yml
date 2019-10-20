@@ -1,0 +1,46 @@
+version: '2.2'
+services:
+  eureka-server:
+    image: eureka-server:v1.0.0
+    container_name: eureka-server
+    volumes:
+      - labdata1:/usr/share/microservice/data
+    ports:
+      - 8761:8761
+    networks:
+      - labnet
+  edge-service:
+    image: edge-service:v1.0.0
+    container_name: edge-service
+    volumes:
+      - labdata2:/usr/share/microservice/data
+    ports:
+      - 8089:8089
+    networks:
+      - labnet
+    dependes_on:
+      - item-catalog-service
+      - eureka-server
+
+  item-catalog-service:
+    image: item-catalog-service:v1.0.0
+    container_name: item-catalog-service
+    volumes:
+      - labdata3:/usr/share/microservice/data
+    ports:
+      - 8088:8088
+    networks:
+      - labnet
+    dependes_on:
+      - eureka-server
+      
+volumes:
+  labdata1:
+    driver: local
+  labdata2:
+    driver: local
+  labdata3:
+    driver: local
+
+networks:
+  labnet:
