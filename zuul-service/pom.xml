@@ -11,7 +11,7 @@
     <groupId>com.cts.zuul</groupId>
     <artifactId>zuul-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>zuul-service</name>
+    <name>ZuulService</name>
     <description>ZuulService project for Spring Boot</description>
 
     <properties>

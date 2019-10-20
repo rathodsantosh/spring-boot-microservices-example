@@ -4,6 +4,8 @@ spring:
 zuul:
   routes:
     item-catalog-service:
-        url: http://localhost:8088
+      path: /item-catalog-service/**
+      service-id: item-catalog-service
     edge-service:
-        url: http://localhost:8089
+      path: /edge-service/**
+      service-id: edge-service
